@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+org.springframework.cloud.openfeign.FeignAutoConfiguration,\
+com.pleosoft.feign.acs.ACSConfiguration
