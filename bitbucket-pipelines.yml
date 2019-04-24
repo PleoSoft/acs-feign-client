@@ -16,5 +16,5 @@ pipelines:
             - (echo $RELEASE_GPG_ENC | base64 --decode > ~/private-key.gpg.enc)
             - openssl aes-256-cbc -pass pass:$OPENSSL_PWD -in ~/private-key.gpg.enc -out private-key.gpg -d
             - gpg --import private-key.gpg
-            - mvn -V -B -s settings.xml -DskipTests -DaltDeploymentRepository=ossrh::default::https://oss.sonatype.org/service/local/staging/deploy/maven2
+            - mvn -V -B -s settings.xml deploy -DskipTests -DaltDeploymentRepository=ossrh::default::https://oss.sonatype.org/service/local/staging/deploy/maven2
     
