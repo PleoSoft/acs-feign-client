@@ -54,6 +54,39 @@ in your java classes
 	...
 ```
 
+API beans you can use
+--
+```
+  AuthenticationApiClient
+  ActionsApiClient
+  ActivitiesApiClient
+  AuditApiClient
+  CommentsApiClient
+  DownloadsApiClient
+  FavoritesApiClient
+  GroupsApiClient
+  NetworksApiClient
+  NodesApiClient
+  PeopleApiClient
+  PreferencesApiClient
+  ProbesApiClient
+  QueriesApiClient
+  RatingsApiClient
+  RenditionsApiClient
+  SharedLinksApiClient
+  SitesApiClient
+  TagsApiClient
+  TrashcanApiClient
+  VersionsApiClient
+  DiscoveryApiClient
+  SearchApiClient
+  SqlApiClient
+  DeploymentsApiClient
+  ProcessDefinitionsApiClient
+  ProcessesApiClient
+  TasksApiClient
+```
+
 ADF
 --
 a webscript call could be sent to your spring controller and the response would match what is expected, but instead of using Alfresco People API
