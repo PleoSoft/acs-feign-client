@@ -79,7 +79,7 @@ public interface ActivitiesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/people/{personId}/activities", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/people/{personId}/activities", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<ActivityPaging> listActivitiesForPerson(@PathVariable("personId") String personId,
 			@Min(0) @RequestParam(value = "skipCount", required = false, defaultValue = "0") Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false, defaultValue = "100") Integer maxItems,

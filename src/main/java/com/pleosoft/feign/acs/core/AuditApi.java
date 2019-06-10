@@ -75,7 +75,7 @@ public interface AuditApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/audit-applications/{auditApplicationId}/audit-entries", produces = "application/json", consumes = "", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/audit-applications/{auditApplicationId}/audit-entries", produces = "application/json",  method = RequestMethod.DELETE)
 	ResponseEntity<Void> deleteAuditEntriesForAuditApp(@PathVariable("auditApplicationId") String auditApplicationId,
 			@NotNull @RequestParam(value = "where", required = true) String where);
 
@@ -108,7 +108,7 @@ public interface AuditApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/audit-applications/{auditApplicationId}/audit-entries/{auditEntryId}", produces = "application/json", consumes = "", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/audit-applications/{auditApplicationId}/audit-entries/{auditEntryId}", produces = "application/json",  method = RequestMethod.DELETE)
 	ResponseEntity<Void> deleteAuditEntry(@PathVariable("auditApplicationId") String auditApplicationId,
 			@PathVariable("auditEntryId") String auditEntryId);
 
@@ -148,7 +148,7 @@ public interface AuditApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/audit-applications/{auditApplicationId}", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/audit-applications/{auditApplicationId}", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<AuditApp> getAuditApp(@PathVariable("auditApplicationId") String auditApplicationId,
 			@RequestParam(value = "fields", required = false) List<String> fields);
 
@@ -191,7 +191,7 @@ public interface AuditApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/audit-applications/{auditApplicationId}/audit-entries/{auditEntryId}", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/audit-applications/{auditApplicationId}/audit-entries/{auditEntryId}", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<AuditEntryEntry> getAuditEntry(@PathVariable("auditApplicationId") String auditApplicationId,
 			@PathVariable("auditEntryId") String auditEntryId,
 			@RequestParam(value = "fields", required = false) List<String> fields);
@@ -240,7 +240,7 @@ public interface AuditApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/audit-applications", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/audit-applications", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<AuditAppPaging> listAuditApps(
 			@Min(0) @RequestParam(value = "skipCount", required = false, defaultValue = "0") Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false, defaultValue = "100") Integer maxItems,
@@ -325,7 +325,7 @@ public interface AuditApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/audit-applications/{auditApplicationId}/audit-entries", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/audit-applications/{auditApplicationId}/audit-entries", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<AuditEntryPaging> listAuditEntriesForAuditApp(
 			@PathVariable("auditApplicationId") String auditApplicationId,
 			@Min(0) @RequestParam(value = "skipCount", required = false, defaultValue = "0") Integer skipCount,
@@ -405,7 +405,7 @@ public interface AuditApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/nodes/{nodeId}/audit-entries", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/nodes/{nodeId}/audit-entries", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<AuditEntryPaging> listAuditEntriesForNode(@PathVariable("nodeId") String nodeId,
 			@Min(0) @RequestParam(value = "skipCount", required = false, defaultValue = "0") Integer skipCount,
 			@RequestParam(value = "orderBy", required = false) List<String> orderBy,

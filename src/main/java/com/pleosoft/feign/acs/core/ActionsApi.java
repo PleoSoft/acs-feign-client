@@ -56,7 +56,7 @@ public interface ActionsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/action-definitions/{actionDefinitionId}", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/action-definitions/{actionDefinitionId}", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<ActionDefinitionEntry> actionDetails(@PathVariable("actionDefinitionId") String actionDefinitionId);
 
 	/**
@@ -161,7 +161,7 @@ public interface ActionsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/action-definitions", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/action-definitions", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<ActionDefinitionList> listActions(
 			@Min(0) @RequestParam(value = "skipCount", required = false, defaultValue = "0") Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false, defaultValue = "100") Integer maxItems,
@@ -221,7 +221,7 @@ public interface ActionsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/nodes/{nodeId}/action-definitions", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/nodes/{nodeId}/action-definitions", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<ActionDefinitionList> nodeActions(@PathVariable("nodeId") String nodeId,
 			@Min(0) @RequestParam(value = "skipCount", required = false, defaultValue = "0") Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false, defaultValue = "100") Integer maxItems,

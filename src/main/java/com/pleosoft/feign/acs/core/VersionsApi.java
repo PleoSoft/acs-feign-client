@@ -76,7 +76,7 @@ public interface VersionsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/nodes/{nodeId}/versions/{versionId}", produces = "application/json", consumes = "", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/nodes/{nodeId}/versions/{versionId}", produces = "application/json",  method = RequestMethod.DELETE)
 	ResponseEntity<Void> deleteVersion(@PathVariable("nodeId") String nodeId,
 			@PathVariable("versionId") String versionId);
 
@@ -110,7 +110,7 @@ public interface VersionsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/nodes/{nodeId}/versions/{versionId}", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/nodes/{nodeId}/versions/{versionId}", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<VersionEntry> getVersion(@PathVariable("nodeId") String nodeId,
 			@PathVariable("versionId") String versionId);
 
@@ -165,7 +165,7 @@ public interface VersionsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/nodes/{nodeId}/versions/{versionId}/content", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/nodes/{nodeId}/versions/{versionId}/content", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<Void> getVersionContent(@PathVariable("nodeId") String nodeId,
 			@PathVariable("versionId") String versionId,
 			@RequestParam(value = "attachment", required = false, defaultValue = "true") Boolean attachment,
@@ -220,7 +220,7 @@ public interface VersionsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/nodes/{nodeId}/versions", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/nodes/{nodeId}/versions", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<VersionPaging> listVersionHistory(@PathVariable("nodeId") String nodeId,
 			@RequestParam(value = "include", required = false) List<String> include,
 			@RequestParam(value = "fields", required = false) List<String> fields,

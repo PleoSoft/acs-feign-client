@@ -103,7 +103,7 @@ public interface QueriesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/queries/nodes", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/queries/nodes", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<NodePaging> findNodes(@NotNull @RequestParam(value = "term", required = true) String term,
 			@RequestParam(value = "rootNodeId", required = false) String rootNodeId,
 			@Min(0) @RequestParam(value = "skipCount", required = false, defaultValue = "0") Integer skipCount,
@@ -168,7 +168,7 @@ public interface QueriesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/queries/people", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/queries/people", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<PersonPaging> findPeople(@NotNull @RequestParam(value = "term", required = true) String term,
 			@Min(0) @RequestParam(value = "skipCount", required = false, defaultValue = "0") Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false, defaultValue = "100") Integer maxItems,
@@ -231,7 +231,7 @@ public interface QueriesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/queries/sites", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/queries/sites", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<SitePaging> findSites(@NotNull @RequestParam(value = "term", required = true) String term,
 			@Min(0) @RequestParam(value = "skipCount", required = false, defaultValue = "0") Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false, defaultValue = "100") Integer maxItems,

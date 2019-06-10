@@ -172,7 +172,7 @@ public interface GroupsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/groups/{groupId}", produces = "application/json", consumes = "", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/groups/{groupId}", produces = "application/json",  method = RequestMethod.DELETE)
 	ResponseEntity<Void> deleteGroup(@PathVariable("groupId") String groupId,
 			@RequestParam(value = "cascade", required = false, defaultValue = "false") Boolean cascade);
 
@@ -209,7 +209,7 @@ public interface GroupsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/groups/{groupId}/members/{groupMemberId}", produces = "application/json", consumes = "", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/groups/{groupId}/members/{groupMemberId}", produces = "application/json",  method = RequestMethod.DELETE)
 	ResponseEntity<Void> deleteGroupMembership(@PathVariable("groupId") String groupId,
 			@PathVariable("groupMemberId") String groupMemberId);
 
@@ -250,7 +250,7 @@ public interface GroupsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/groups/{groupId}", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/groups/{groupId}", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<GroupEntry> getGroup(@PathVariable("groupId") String groupId,
 			@RequestParam(value = "include", required = false) List<String> include,
 			@RequestParam(value = "fields", required = false) List<String> fields);
@@ -316,7 +316,7 @@ public interface GroupsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/groups/{groupId}/members", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/groups/{groupId}/members", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<GroupMemberPaging> listGroupMemberships(@PathVariable("groupId") String groupId,
 			@Min(0) @RequestParam(value = "skipCount", required = false, defaultValue = "0") Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false, defaultValue = "100") Integer maxItems,
@@ -399,7 +399,7 @@ public interface GroupsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/people/{personId}/groups", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/people/{personId}/groups", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<GroupPaging> listGroupMembershipsForPerson(@PathVariable("personId") String personId,
 			@Min(0) @RequestParam(value = "skipCount", required = false, defaultValue = "0") Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false, defaultValue = "100") Integer maxItems,
@@ -478,7 +478,7 @@ public interface GroupsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/groups", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/groups", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<GroupPaging> listGroups(
 			@Min(0) @RequestParam(value = "skipCount", required = false, defaultValue = "0") Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false, defaultValue = "100") Integer maxItems,

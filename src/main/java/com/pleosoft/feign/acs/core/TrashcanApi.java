@@ -62,7 +62,7 @@ public interface TrashcanApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/deleted-nodes/{nodeId}", produces = "application/json", consumes = "", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/deleted-nodes/{nodeId}", produces = "application/json",  method = RequestMethod.DELETE)
 	ResponseEntity<Void> deleteDeletedNode(@PathVariable("nodeId") String nodeId);
 
 	/**
@@ -95,7 +95,7 @@ public interface TrashcanApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/deleted-nodes/{nodeId}/renditions/{renditionId}", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/deleted-nodes/{nodeId}/renditions/{renditionId}", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<RenditionEntry> getArchivedNodeRendition(@PathVariable("nodeId") String nodeId,
 			@PathVariable("renditionId") String renditionId);
 
@@ -155,7 +155,7 @@ public interface TrashcanApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/deleted-nodes/{nodeId}/renditions/{renditionId}/content", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/deleted-nodes/{nodeId}/renditions/{renditionId}/content", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<Void> getArchivedNodeRenditionContent(@PathVariable("nodeId") String nodeId,
 			@PathVariable("renditionId") String renditionId,
 			@RequestParam(value = "attachment", required = false, defaultValue = "true") Boolean attachment,
@@ -193,7 +193,7 @@ public interface TrashcanApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/deleted-nodes/{nodeId}", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/deleted-nodes/{nodeId}", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<DeletedNodeEntry> getDeletedNode(@PathVariable("nodeId") String nodeId,
 			@RequestParam(value = "include", required = false) List<String> include);
 
@@ -243,7 +243,7 @@ public interface TrashcanApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/deleted-nodes/{nodeId}/content", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/deleted-nodes/{nodeId}/content", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<Void> getDeletedNodeContent(@PathVariable("nodeId") String nodeId,
 			@RequestParam(value = "attachment", required = false, defaultValue = "true") Boolean attachment,
 			@RequestHeader(value = "If-Modified-Since", required = false) Date ifModifiedSince,
@@ -283,7 +283,7 @@ public interface TrashcanApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/deleted-nodes/{nodeId}/renditions", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/deleted-nodes/{nodeId}/renditions", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<RenditionPaging> listDeletedNodeRenditions(@PathVariable("nodeId") String nodeId,
 			@RequestParam(value = "where", required = false) String where);
 
@@ -323,7 +323,7 @@ public interface TrashcanApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/deleted-nodes", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/deleted-nodes", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<DeletedNodesPaging> listDeletedNodes(
 			@Min(0) @RequestParam(value = "skipCount", required = false, defaultValue = "0") Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false, defaultValue = "100") Integer maxItems,

@@ -177,7 +177,7 @@ public interface FavoritesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/people/{personId}/favorites/{favoriteId}", produces = "application/json", consumes = "", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/people/{personId}/favorites/{favoriteId}", produces = "application/json",  method = RequestMethod.DELETE)
 	ResponseEntity<Void> deleteFavorite(@PathVariable("personId") String personId,
 			@PathVariable("favoriteId") String favoriteId);
 
@@ -209,7 +209,7 @@ public interface FavoritesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/people/{personId}/favorite-sites/{siteId}", produces = "application/json", consumes = "", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/people/{personId}/favorite-sites/{siteId}", produces = "application/json",  method = RequestMethod.DELETE)
 	ResponseEntity<Void> deleteSiteFavorite(@PathVariable("personId") String personId,
 			@PathVariable("siteId") String siteId);
 
@@ -251,7 +251,7 @@ public interface FavoritesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/people/{personId}/favorites/{favoriteId}", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/people/{personId}/favorites/{favoriteId}", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<FavoriteEntry> getFavorite(@PathVariable("personId") String personId,
 			@PathVariable("favoriteId") String favoriteId,
 			@RequestParam(value = "include", required = false) List<String> include,
@@ -295,7 +295,7 @@ public interface FavoritesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/people/{personId}/favorite-sites/{siteId}", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/people/{personId}/favorite-sites/{siteId}", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<SiteEntry> getFavoriteSite(@PathVariable("personId") String personId,
 			@PathVariable("siteId") String siteId,
 			@RequestParam(value = "fields", required = false) List<String> fields);
@@ -344,7 +344,7 @@ public interface FavoritesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/people/{personId}/favorite-sites", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/people/{personId}/favorite-sites", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<SitePaging> listFavoriteSitesForPerson(@PathVariable("personId") String personId,
 			@Min(0) @RequestParam(value = "skipCount", required = false, defaultValue = "0") Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false, defaultValue = "100") Integer maxItems,
@@ -411,7 +411,7 @@ public interface FavoritesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/people/{personId}/favorites", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/people/{personId}/favorites", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<FavoritePaging> listFavorites(@PathVariable("personId") String personId,
 			@Min(0) @RequestParam(value = "skipCount", required = false, defaultValue = "0") Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false, defaultValue = "100") Integer maxItems,

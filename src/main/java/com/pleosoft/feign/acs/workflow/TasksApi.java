@@ -135,7 +135,7 @@ public interface TasksApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/tasks/{taskId}/items/{itemId}", produces = "application/json", consumes = "", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/tasks/{taskId}/items/{itemId}", produces = "application/json",  method = RequestMethod.DELETE)
 	ResponseEntity<Void> deleteTaskItem(@PathVariable("taskId") String taskId, @PathVariable("itemId") String itemId);
 
 	/**
@@ -161,7 +161,7 @@ public interface TasksApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/tasks/{taskId}/variables/{variableName}", produces = "application/json", consumes = "", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/tasks/{taskId}/variables/{variableName}", produces = "application/json",  method = RequestMethod.DELETE)
 	ResponseEntity<Void> deleteTaskVariable(@PathVariable("taskId") String taskId,
 			@PathVariable("variableName") String variableName);
 
@@ -194,7 +194,7 @@ public interface TasksApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/tasks/{taskId}", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/tasks/{taskId}", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<TaskEntry> getTask(@PathVariable("taskId") String taskId,
 			@RequestParam(value = "properties", required = false) List<String> properties);
 
@@ -230,7 +230,7 @@ public interface TasksApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/tasks/{taskId}/task-form-model", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/tasks/{taskId}/task-form-model", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<TaskFormModelPaging> getTaskFormModel(@PathVariable("taskId") String taskId,
 			@Min(0) @RequestParam(value = "skipCount", required = false) Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false) Integer maxItems,
@@ -267,7 +267,7 @@ public interface TasksApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/tasks/{taskId}/candidates", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/tasks/{taskId}/candidates", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<CandidatePaging> listTaskCandidates(@PathVariable("taskId") String taskId,
 			@Min(0) @RequestParam(value = "skipCount", required = false) Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false) Integer maxItems,
@@ -310,7 +310,7 @@ public interface TasksApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/tasks/{taskId}/items", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/tasks/{taskId}/items", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<ItemPaging> listTaskItems(@PathVariable("taskId") String taskId,
 			@Min(0) @RequestParam(value = "skipCount", required = false) Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false) Integer maxItems,
@@ -356,7 +356,7 @@ public interface TasksApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/tasks/{taskId}/variables", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/tasks/{taskId}/variables", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<VariablePaging> listTaskVariables(@PathVariable("taskId") String taskId,
 			@Min(0) @RequestParam(value = "skipCount", required = false) Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false) Integer maxItems,
@@ -408,7 +408,7 @@ public interface TasksApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/tasks", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/tasks", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<TaskPaging> listTasks(@Min(0) @RequestParam(value = "skipCount", required = false) Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false) Integer maxItems,
 			@RequestParam(value = "properties", required = false) List<String> properties,
@@ -461,7 +461,7 @@ public interface TasksApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/processes/{processId}/tasks", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/processes/{processId}/tasks", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<TaskPaging> listTasksForProcess(@PathVariable("processId") String processId,
 			@Min(0) @RequestParam(value = "skipCount", required = false) Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false) Integer maxItems,

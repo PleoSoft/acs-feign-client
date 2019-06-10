@@ -389,7 +389,7 @@ public interface NodesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/nodes/{nodeId}/targets/{targetId}", produces = "application/json", consumes = "", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/nodes/{nodeId}/targets/{targetId}", produces = "application/json",  method = RequestMethod.DELETE)
 	ResponseEntity<Void> deleteAssociation(@PathVariable("nodeId") String nodeId,
 			@PathVariable("targetId") String targetId,
 			@RequestParam(value = "assocType", required = false) String assocType);
@@ -438,7 +438,7 @@ public interface NodesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/nodes/{nodeId}", produces = "application/json", consumes = "", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/nodes/{nodeId}", produces = "application/json",  method = RequestMethod.DELETE)
 	ResponseEntity<Void> deleteNode(@PathVariable("nodeId") String nodeId,
 			@RequestParam(value = "permanent", required = false, defaultValue = "false") Boolean permanent);
 
@@ -477,7 +477,7 @@ public interface NodesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/nodes/{nodeId}/secondary-children/{childId}", produces = "application/json", consumes = "", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/nodes/{nodeId}/secondary-children/{childId}", produces = "application/json",  method = RequestMethod.DELETE)
 	ResponseEntity<Void> deleteSecondaryChildAssociation(@PathVariable("nodeId") String nodeId,
 			@PathVariable("childId") String childId,
 			@RequestParam(value = "assocType", required = false) String assocType);
@@ -527,7 +527,7 @@ public interface NodesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/nodes/{nodeId}", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/nodes/{nodeId}", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<NodeEntry> getNode(@PathVariable("nodeId") String nodeId,
 			@RequestParam(value = "include", required = false) List<String> include,
 			@RequestParam(value = "relativePath", required = false) String relativePath,
@@ -579,7 +579,7 @@ public interface NodesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/nodes/{nodeId}/content", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/nodes/{nodeId}/content", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<Void> getNodeContent(@PathVariable("nodeId") String nodeId,
 			@RequestParam(value = "attachment", required = false, defaultValue = "true") Boolean attachment,
 			@RequestHeader(value = "If-Modified-Since", required = false) Date ifModifiedSince,
@@ -675,7 +675,7 @@ public interface NodesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/nodes/{nodeId}/children", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/nodes/{nodeId}/children", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<NodeChildAssociationPaging> listNodeChildren(@PathVariable("nodeId") String nodeId,
 			@Min(0) @RequestParam(value = "skipCount", required = false, defaultValue = "0") Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false, defaultValue = "100") Integer maxItems,
@@ -746,7 +746,7 @@ public interface NodesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/nodes/{nodeId}/parents", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/nodes/{nodeId}/parents", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<NodeAssociationPaging> listParents(@PathVariable("nodeId") String nodeId,
 			@RequestParam(value = "where", required = false) String where,
 			@RequestParam(value = "include", required = false) List<String> include,
@@ -811,7 +811,7 @@ public interface NodesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/nodes/{nodeId}/secondary-children", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/nodes/{nodeId}/secondary-children", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<NodeChildAssociationPaging> listSecondaryChildren(@PathVariable("nodeId") String nodeId,
 			@RequestParam(value = "where", required = false) String where,
 			@RequestParam(value = "include", required = false) List<String> include,
@@ -863,7 +863,7 @@ public interface NodesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/nodes/{nodeId}/sources", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/nodes/{nodeId}/sources", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<NodeAssociationPaging> listSourceAssociations(@PathVariable("nodeId") String nodeId,
 			@RequestParam(value = "where", required = false) String where,
 			@RequestParam(value = "include", required = false) List<String> include,
@@ -912,7 +912,7 @@ public interface NodesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/nodes/{nodeId}/targets", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/nodes/{nodeId}/targets", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<NodeAssociationPaging> listTargetAssociations(@PathVariable("nodeId") String nodeId,
 			@RequestParam(value = "where", required = false) String where,
 			@RequestParam(value = "include", required = false) List<String> include,
@@ -1087,7 +1087,7 @@ public interface NodesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/nodes/{nodeId}/unlock", produces = "application/json", consumes = "", method = RequestMethod.POST)
+	@RequestMapping(value = "/nodes/{nodeId}/unlock", produces = "application/json",  method = RequestMethod.POST)
 	ResponseEntity<NodeEntry> unlockNode(@PathVariable("nodeId") String nodeId,
 			@RequestParam(value = "include", required = false) List<String> include,
 			@RequestParam(value = "fields", required = false) List<String> fields);
