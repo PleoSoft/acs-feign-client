@@ -109,7 +109,7 @@ public interface PeopleApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/people/{personId}/avatar", produces = "application/json", consumes = "", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/people/{personId}/avatar", produces = "application/json",  method = RequestMethod.DELETE)
 	ResponseEntity<Void> deleteAvatarImage(@PathVariable("personId") String personId);
 
 	/**
@@ -159,7 +159,7 @@ public interface PeopleApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/people/{personId}/avatar", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/people/{personId}/avatar", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<Void> getAvatarImage(@PathVariable("personId") String personId,
 			@RequestParam(value = "attachment", required = false, defaultValue = "true") Boolean attachment,
 			@RequestHeader(value = "If-Modified-Since", required = false) Date ifModifiedSince,
@@ -196,7 +196,7 @@ public interface PeopleApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/people/{personId}", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/people/{personId}", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<PersonEntry> getPerson(@PathVariable("personId") String personId,
 			@RequestParam(value = "fields", required = false) List<String> fields);
 
@@ -254,7 +254,7 @@ public interface PeopleApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/people", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/people", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<PersonPaging> listPeople(
 			@Min(0) @RequestParam(value = "skipCount", required = false, defaultValue = "0") Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false, defaultValue = "100") Integer maxItems,

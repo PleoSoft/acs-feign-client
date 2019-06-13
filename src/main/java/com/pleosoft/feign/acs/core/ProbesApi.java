@@ -51,7 +51,7 @@ public interface ProbesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/probes/{probeId}", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/probes/{probeId}", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<ProbeEntry> getProbe(@PathVariable("probeId") String probeId);
 
 }

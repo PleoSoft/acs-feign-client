@@ -62,7 +62,7 @@ public interface DownloadsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/downloads/{downloadId}", produces = "application/json", consumes = "", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/downloads/{downloadId}", produces = "application/json",  method = RequestMethod.DELETE)
 	ResponseEntity<Void> cancelDownload(@PathVariable("downloadId") String downloadId);
 
 	/**
@@ -145,7 +145,7 @@ public interface DownloadsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/downloads/{downloadId}", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/downloads/{downloadId}", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<DownloadEntry> getDownload(@PathVariable("downloadId") String downloadId,
 			@RequestParam(value = "fields", required = false) List<String> fields);
 

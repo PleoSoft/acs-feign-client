@@ -60,7 +60,7 @@ public interface NetworksApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/networks/{networkId}", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/networks/{networkId}", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<PersonNetworkEntry> getNetwork(@PathVariable("networkId") String networkId,
 			@RequestParam(value = "fields", required = false) List<String> fields);
 
@@ -98,7 +98,7 @@ public interface NetworksApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/people/{personId}/networks/{networkId}", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/people/{personId}/networks/{networkId}", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<PersonNetworkEntry> getNetworkForPerson(@PathVariable("personId") String personId,
 			@PathVariable("networkId") String networkId,
 			@RequestParam(value = "fields", required = false) List<String> fields);
@@ -144,7 +144,7 @@ public interface NetworksApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/people/{personId}/networks", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/people/{personId}/networks", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<PersonNetworkPaging> listNetworksForPerson(@PathVariable("personId") String personId,
 			@Min(0) @RequestParam(value = "skipCount", required = false, defaultValue = "0") Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false, defaultValue = "100") Integer maxItems,

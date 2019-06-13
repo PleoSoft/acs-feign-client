@@ -199,7 +199,7 @@ public interface ProcessesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/processes/{processId}", produces = "application/json", consumes = "", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/processes/{processId}", produces = "application/json",  method = RequestMethod.DELETE)
 	ResponseEntity<Void> deleteProcess(@PathVariable("processId") String processId);
 
 	/**
@@ -225,7 +225,7 @@ public interface ProcessesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/processes/{processId}/items/{itemId}", produces = "application/json", consumes = "", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/processes/{processId}/items/{itemId}", produces = "application/json",  method = RequestMethod.DELETE)
 	ResponseEntity<Void> deleteProcessItem(@PathVariable("processId") String processId,
 			@PathVariable("itemId") String itemId);
 
@@ -252,7 +252,7 @@ public interface ProcessesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/processes/{processId}/variables/{variableName}", produces = "application/json", consumes = "", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/processes/{processId}/variables/{variableName}", produces = "application/json",  method = RequestMethod.DELETE)
 	ResponseEntity<Void> deleteProcessVariable(@PathVariable("processId") String processId,
 			@PathVariable("variableName") String variableName);
 
@@ -286,7 +286,7 @@ public interface ProcessesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/processes/{processId}", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/processes/{processId}", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<ProcessEntry> getProcess(@PathVariable("processId") String processId,
 			@RequestParam(value = "properties", required = false) List<String> properties);
 
@@ -327,7 +327,7 @@ public interface ProcessesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/processes/{processId}/items", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/processes/{processId}/items", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<ItemPaging> listProcessItems(@PathVariable("processId") String processId,
 			@Min(0) @RequestParam(value = "skipCount", required = false) Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false) Integer maxItems,
@@ -370,7 +370,7 @@ public interface ProcessesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/processes/{processId}/variables", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/processes/{processId}/variables", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<VariablePaging> listProcessVariables(@PathVariable("processId") String processId,
 			@Min(0) @RequestParam(value = "skipCount", required = false) Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false) Integer maxItems,
@@ -421,7 +421,7 @@ public interface ProcessesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/processes", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/processes", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<ProcessPaging> listProcesses(
 			@Min(0) @RequestParam(value = "skipCount", required = false) Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false) Integer maxItems,

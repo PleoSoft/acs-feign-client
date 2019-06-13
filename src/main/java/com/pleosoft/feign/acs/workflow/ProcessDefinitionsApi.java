@@ -60,7 +60,7 @@ public interface ProcessDefinitionsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/process-definitions/{processDefinitionId}", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/process-definitions/{processDefinitionId}", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<ProcessDefinitionEntry> getProcessDefinition(
 			@PathVariable("processDefinitionId") String processDefinitionId,
 			@RequestParam(value = "properties", required = false) List<String> properties);
@@ -89,7 +89,7 @@ public interface ProcessDefinitionsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/process-definitions/{processDefinitionId}/image", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/process-definitions/{processDefinitionId}/image", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<Resource> getProcessDefinitionImage(@PathVariable("processDefinitionId") String processDefinitionId);
 
 	/**
@@ -118,7 +118,7 @@ public interface ProcessDefinitionsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/process-definitions/{processDefinitionId}/start-form-model", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/process-definitions/{processDefinitionId}/start-form-model", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<TaskFormModelPaging> getProcessDefinitionStartFormModel(
 			@PathVariable("processDefinitionId") String processDefinitionId,
 			@RequestParam(value = "properties", required = false) List<String> properties);
@@ -165,7 +165,7 @@ public interface ProcessDefinitionsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/process-definitions", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/process-definitions", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<ProcessDefinitionPaging> listProcessDefinitions(
 			@Min(0) @RequestParam(value = "skipCount", required = false) Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false) Integer maxItems,

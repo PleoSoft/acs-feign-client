@@ -99,7 +99,7 @@ public interface RatingsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/nodes/{nodeId}/ratings/{ratingId}", produces = "application/json", consumes = "", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/nodes/{nodeId}/ratings/{ratingId}", produces = "application/json",  method = RequestMethod.DELETE)
 	ResponseEntity<Void> deleteRating(@PathVariable("nodeId") String nodeId, @PathVariable("ratingId") String ratingId);
 
 	/**
@@ -135,7 +135,7 @@ public interface RatingsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/nodes/{nodeId}/ratings/{ratingId}", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/nodes/{nodeId}/ratings/{ratingId}", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<RatingEntry> getRating(@PathVariable("nodeId") String nodeId,
 			@PathVariable("ratingId") String ratingId,
 			@RequestParam(value = "fields", required = false) List<String> fields);
@@ -179,7 +179,7 @@ public interface RatingsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/nodes/{nodeId}/ratings", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/nodes/{nodeId}/ratings", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<RatingPaging> listRatings(@PathVariable("nodeId") String nodeId,
 			@Min(0) @RequestParam(value = "skipCount", required = false, defaultValue = "0") Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false, defaultValue = "100") Integer maxItems,

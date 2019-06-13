@@ -113,7 +113,7 @@ public interface CommentsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/nodes/{nodeId}/comments/{commentId}", produces = "application/json", consumes = "", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/nodes/{nodeId}/comments/{commentId}", produces = "application/json",  method = RequestMethod.DELETE)
 	ResponseEntity<Void> deleteComment(@PathVariable("nodeId") String nodeId,
 			@PathVariable("commentId") String commentId);
 
@@ -161,7 +161,7 @@ public interface CommentsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/nodes/{nodeId}/comments", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/nodes/{nodeId}/comments", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<CommentPaging> listComments(@PathVariable("nodeId") String nodeId,
 			@Min(0) @RequestParam(value = "skipCount", required = false, defaultValue = "0") Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false, defaultValue = "100") Integer maxItems,

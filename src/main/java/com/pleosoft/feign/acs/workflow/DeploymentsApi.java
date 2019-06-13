@@ -52,7 +52,7 @@ public interface DeploymentsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/deployments/{deploymentId}", produces = "application/json", consumes = "", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/deployments/{deploymentId}", produces = "application/json",  method = RequestMethod.DELETE)
 	ResponseEntity<Void> deleteDeployment(@PathVariable("deploymentId") String deploymentId);
 
 	/**
@@ -82,7 +82,7 @@ public interface DeploymentsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/deployments/{deploymentId}", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/deployments/{deploymentId}", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<DeploymentEntry> getDeployment(@PathVariable("deploymentId") String deploymentId,
 			@RequestParam(value = "properties", required = false) List<String> properties);
 
@@ -116,7 +116,7 @@ public interface DeploymentsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/deployments", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/deployments", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<DeploymentPaging> listDeployments(
 			@Min(0) @RequestParam(value = "skipCount", required = false) Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false) Integer maxItems,

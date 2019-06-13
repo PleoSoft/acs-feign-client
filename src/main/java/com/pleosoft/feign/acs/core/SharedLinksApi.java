@@ -127,7 +127,7 @@ public interface SharedLinksApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/shared-links/{sharedId}", produces = "application/json", consumes = "", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/shared-links/{sharedId}", produces = "application/json",  method = RequestMethod.DELETE)
 	ResponseEntity<Void> deleteSharedLink(@PathVariable("sharedId") String sharedId);
 
 	/**
@@ -211,7 +211,7 @@ public interface SharedLinksApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/shared-links/{sharedId}", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/shared-links/{sharedId}", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<SharedLinkEntry> getSharedLink(@PathVariable("sharedId") String sharedId,
 			@RequestParam(value = "fields", required = false) List<String> fields);
 
@@ -261,7 +261,7 @@ public interface SharedLinksApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/shared-links/{sharedId}/content", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/shared-links/{sharedId}/content", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<Void> getSharedLinkContent(@PathVariable("sharedId") String sharedId,
 			@RequestParam(value = "attachment", required = false, defaultValue = "true") Boolean attachment,
 			@RequestHeader(value = "If-Modified-Since", required = false) Date ifModifiedSince,
@@ -299,7 +299,7 @@ public interface SharedLinksApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/shared-links/{sharedId}/renditions/{renditionId}", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/shared-links/{sharedId}/renditions/{renditionId}", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<RenditionEntry> getSharedLinkRendition(@PathVariable("sharedId") String sharedId,
 			@PathVariable("renditionId") String renditionId);
 
@@ -353,7 +353,7 @@ public interface SharedLinksApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/shared-links/{sharedId}/renditions/{renditionId}/content", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/shared-links/{sharedId}/renditions/{renditionId}/content", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<Void> getSharedLinkRenditionContent(@PathVariable("sharedId") String sharedId,
 			@PathVariable("renditionId") String renditionId,
 			@RequestParam(value = "attachment", required = false, defaultValue = "true") Boolean attachment,
@@ -388,7 +388,7 @@ public interface SharedLinksApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/shared-links/{sharedId}/renditions", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/shared-links/{sharedId}/renditions", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<RenditionPaging> listSharedLinkRenditions(@PathVariable("sharedId") String sharedId);
 
 	/**
@@ -442,7 +442,7 @@ public interface SharedLinksApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/shared-links", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/shared-links", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<SharedLinkPaging> listSharedLinks(
 			@Min(0) @RequestParam(value = "skipCount", required = false, defaultValue = "0") Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false, defaultValue = "100") Integer maxItems,

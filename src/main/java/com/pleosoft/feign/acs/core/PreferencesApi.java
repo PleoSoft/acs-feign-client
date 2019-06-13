@@ -67,7 +67,7 @@ public interface PreferencesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/people/{personId}/preferences/{preferenceName}", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/people/{personId}/preferences/{preferenceName}", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<PreferenceEntry> getPreference(@PathVariable("personId") String personId,
 			@PathVariable("preferenceName") String preferenceName,
 			@RequestParam(value = "fields", required = false) List<String> fields);
@@ -116,7 +116,7 @@ public interface PreferencesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/people/{personId}/preferences", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/people/{personId}/preferences", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<PreferencePaging> listPreferences(@PathVariable("personId") String personId,
 			@Min(0) @RequestParam(value = "skipCount", required = false, defaultValue = "0") Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false, defaultValue = "100") Integer maxItems,

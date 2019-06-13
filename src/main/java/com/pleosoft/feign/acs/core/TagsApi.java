@@ -105,7 +105,7 @@ public interface TagsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/nodes/{nodeId}/tags/{tagId}", produces = "application/json", consumes = "", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/nodes/{nodeId}/tags/{tagId}", produces = "application/json",  method = RequestMethod.DELETE)
 	ResponseEntity<Void> deleteTagFromNode(@PathVariable("nodeId") String nodeId, @PathVariable("tagId") String tagId);
 
 	/**
@@ -137,7 +137,7 @@ public interface TagsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/tags/{tagId}", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/tags/{tagId}", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<TagEntry> getTag(@PathVariable("tagId") String tagId,
 			@RequestParam(value = "fields", required = false) List<String> fields);
 
@@ -181,7 +181,7 @@ public interface TagsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/tags", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/tags", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<TagPaging> listTags(
 			@Min(0) @RequestParam(value = "skipCount", required = false, defaultValue = "0") Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false, defaultValue = "100") Integer maxItems,
@@ -229,7 +229,7 @@ public interface TagsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/nodes/{nodeId}/tags", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/nodes/{nodeId}/tags", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<TagPaging> listTagsForNode(@PathVariable("nodeId") String nodeId,
 			@Min(0) @RequestParam(value = "skipCount", required = false, defaultValue = "0") Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false, defaultValue = "100") Integer maxItems,

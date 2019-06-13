@@ -80,7 +80,7 @@ public interface AuthenticationApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/tickets/-me-", produces = "application/json", consumes = "", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/tickets/-me-", produces = "application/json",  method = RequestMethod.DELETE)
 	ResponseEntity<Void> deleteTicket();
 
 	/**
@@ -110,7 +110,7 @@ public interface AuthenticationApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/tickets/-me-", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/tickets/-me-", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<ValidTicketEntry> validateTicket();
 
 }

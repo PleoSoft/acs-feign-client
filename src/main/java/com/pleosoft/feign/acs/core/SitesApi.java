@@ -283,7 +283,7 @@ public interface SitesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/sites/{siteId}", produces = "application/json", consumes = "", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/sites/{siteId}", produces = "application/json",  method = RequestMethod.DELETE)
 	ResponseEntity<Void> deleteSite(@PathVariable("siteId") String siteId,
 			@RequestParam(value = "permanent", required = false, defaultValue = "false") Boolean permanent);
 
@@ -313,7 +313,7 @@ public interface SitesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/sites/{siteId}/members/{personId}", produces = "application/json", consumes = "", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/sites/{siteId}/members/{personId}", produces = "application/json",  method = RequestMethod.DELETE)
 	ResponseEntity<Void> deleteSiteMembership(@PathVariable("siteId") String siteId,
 			@PathVariable("personId") String personId);
 
@@ -341,7 +341,7 @@ public interface SitesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/people/{personId}/sites/{siteId}", produces = "application/json", consumes = "", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/people/{personId}/sites/{siteId}", produces = "application/json",  method = RequestMethod.DELETE)
 	ResponseEntity<Void> deleteSiteMembershipForPerson(@PathVariable("personId") String personId,
 			@PathVariable("siteId") String siteId);
 
@@ -369,7 +369,7 @@ public interface SitesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/people/{personId}/site-membership-requests/{siteId}", produces = "application/json", consumes = "", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/people/{personId}/site-membership-requests/{siteId}", produces = "application/json",  method = RequestMethod.DELETE)
 	ResponseEntity<Void> deleteSiteMembershipRequestForPerson(@PathVariable("personId") String personId,
 			@PathVariable("siteId") String siteId);
 
@@ -411,7 +411,7 @@ public interface SitesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/sites/{siteId}", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/sites/{siteId}", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<SiteEntry> getSite(@PathVariable("siteId") String siteId,
 			@RequestParam(value = "relations", required = false) List<String> relations,
 			@RequestParam(value = "fields", required = false) List<String> fields);
@@ -448,7 +448,7 @@ public interface SitesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/sites/{siteId}/containers/{containerId}", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/sites/{siteId}/containers/{containerId}", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<SiteContainerEntry> getSiteContainer(@PathVariable("siteId") String siteId,
 			@PathVariable("containerId") String containerId,
 			@RequestParam(value = "fields", required = false) List<String> fields);
@@ -487,7 +487,7 @@ public interface SitesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/sites/{siteId}/members/{personId}", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/sites/{siteId}/members/{personId}", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<SiteMemberEntry> getSiteMembership(@PathVariable("siteId") String siteId,
 			@PathVariable("personId") String personId,
 			@RequestParam(value = "fields", required = false) List<String> fields);
@@ -517,7 +517,7 @@ public interface SitesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/people/{personId}/sites/{siteId}", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/people/{personId}/sites/{siteId}", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<SiteRoleEntry> getSiteMembershipForPerson(@PathVariable("personId") String personId,
 			@PathVariable("siteId") String siteId);
 
@@ -555,7 +555,7 @@ public interface SitesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/people/{personId}/site-membership-requests/{siteId}", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/people/{personId}/site-membership-requests/{siteId}", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<SiteMembershipRequestEntry> getSiteMembershipRequestForPerson(
 			@PathVariable("personId") String personId, @PathVariable("siteId") String siteId,
 			@RequestParam(value = "fields", required = false) List<String> fields);
@@ -604,7 +604,7 @@ public interface SitesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/site-membership-requests", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/site-membership-requests", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<SiteMembershipRequestWithPersonPaging> getSiteMembershipRequests(
 			@Min(0) @RequestParam(value = "skipCount", required = false, defaultValue = "0") Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false, defaultValue = "100") Integer maxItems,
@@ -650,7 +650,7 @@ public interface SitesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/sites/{siteId}/containers", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/sites/{siteId}/containers", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<SiteContainerPaging> listSiteContainers(@PathVariable("siteId") String siteId,
 			@Min(0) @RequestParam(value = "skipCount", required = false, defaultValue = "0") Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false, defaultValue = "100") Integer maxItems,
@@ -697,7 +697,7 @@ public interface SitesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/people/{personId}/site-membership-requests", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/people/{personId}/site-membership-requests", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<SiteMembershipRequestPaging> listSiteMembershipRequestsForPerson(
 			@PathVariable("personId") String personId,
 			@Min(0) @RequestParam(value = "skipCount", required = false, defaultValue = "0") Integer skipCount,
@@ -743,7 +743,7 @@ public interface SitesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/sites/{siteId}/members", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/sites/{siteId}/members", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<SiteMemberPaging> listSiteMemberships(@PathVariable("siteId") String siteId,
 			@Min(0) @RequestParam(value = "skipCount", required = false, defaultValue = "0") Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false, defaultValue = "100") Integer maxItems,
@@ -813,7 +813,7 @@ public interface SitesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/people/{personId}/sites", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/people/{personId}/sites", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<SiteRolePaging> listSiteMembershipsForPerson(@PathVariable("personId") String personId,
 			@Min(0) @RequestParam(value = "skipCount", required = false, defaultValue = "0") Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false, defaultValue = "100") Integer maxItems,
@@ -887,7 +887,7 @@ public interface SitesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/sites", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/sites", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<SitePaging> listSites(
 			@Min(0) @RequestParam(value = "skipCount", required = false, defaultValue = "0") Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false, defaultValue = "100") Integer maxItems,

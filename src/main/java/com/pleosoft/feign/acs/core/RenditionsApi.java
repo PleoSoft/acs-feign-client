@@ -102,7 +102,7 @@ public interface RenditionsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/nodes/{nodeId}/renditions/{renditionId}", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/nodes/{nodeId}/renditions/{renditionId}", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<RenditionEntry> getRendition(@PathVariable("nodeId") String nodeId,
 			@PathVariable("renditionId") String renditionId);
 
@@ -162,7 +162,7 @@ public interface RenditionsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/nodes/{nodeId}/renditions/{renditionId}/content", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/nodes/{nodeId}/renditions/{renditionId}/content", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<Void> getRenditionContent(@PathVariable("nodeId") String nodeId,
 			@PathVariable("renditionId") String renditionId,
 			@RequestParam(value = "attachment", required = false, defaultValue = "true") Boolean attachment,
@@ -204,7 +204,7 @@ public interface RenditionsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/nodes/{nodeId}/renditions", produces = "application/json", consumes = "", method = RequestMethod.GET)
+	@RequestMapping(value = "/nodes/{nodeId}/renditions", produces = "application/json",  method = RequestMethod.GET)
 	ResponseEntity<RenditionPaging> listRenditions(@PathVariable("nodeId") String nodeId,
 			@RequestParam(value = "where", required = false) String where);
 
