@@ -1,3 +1,4 @@
+
 This library exposes an Spring Cloud OpenFeign implementation for Alfresco V1 Rest APIs.
 You can add it to your dependencies and use it in a Spring Boot application for instance.
 Spring Boot autoconfiguration is used and therefore no manual configuration is required.
@@ -39,6 +40,15 @@ Aturhotization header name, if for some reason you want to customize the header 
 Finally, specify your ACS (Alfresco Content Services) host:
 - acs.feign.url=http://localhost:8080/alfresco
 
+
+Enable all APIs
+- acs.feign.use-defaults=true
+should be added to your applicaiton.properties
+
+Cherrypick the APIs you need
+- @EnableFeignClients(clients = { NodesApiClient.class })
+add this annotation to your spring configuration in order to enable NodesApi. You can use any API listed below
+
 in your java classes
 --
 ```
@@ -49,8 +59,7 @@ in your java classes
 	final NodeBodyCreate nodeBodyCreate = new NodeBodyCreate();
 		nodeBodyCreate.setName("test-swagger3.txt");
 		nodeBodyCreate.setNodeType("cm:content");
-		final ResponseEntity<NodeEntry> createNode = nodesApiClient.createNode("-root-", nodeBodyCreate, false, null,
-				null);
+		final ResponseEntity<NodeEntry> createNode = nodesApiClient.createNode("-root-", nodeBodyCreate, false, null, null);
 	...
 ```
 
