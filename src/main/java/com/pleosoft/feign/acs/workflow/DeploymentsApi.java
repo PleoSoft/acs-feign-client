@@ -41,9 +41,8 @@ public interface DeploymentsApi {
 	 * </p>
 	 *
 	 *
-	 * @param deploymentId
-	 *            ("The unique id must be a String. It is returned as an **id**
-	 *            from the entity",required=true)
+	 * @param deploymentId ("The unique id must be a String. It is returned as an
+	 *                     **id** from the entity",required=true)
 	 * @return value = { <br/>
 	 *         code = 204, message = "Successful response"),<br/>
 	 *         code = 401, message = "Authentication failed"),<br/>
@@ -52,26 +51,25 @@ public interface DeploymentsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/deployments/{deploymentId}", produces = "application/json",  method = RequestMethod.DELETE)
+	@RequestMapping(value = "/deployments/{deploymentId}", produces = "application/json", method = RequestMethod.DELETE)
 	ResponseEntity<Void> deleteDeployment(@PathVariable("deploymentId") String deploymentId);
 
 	/**
 	 * Get a deployment
 	 *
 	 * <p>
-	 * Gets a specified deployment defined by **deploymentId**. The
-	 * authenticated user must have role admin (non-network deployments) or
-	 * network admin (networks enabled). If networks are enabled, the deployment
-	 * is only returned if the deployment is in the given network.
+	 * Gets a specified deployment defined by **deploymentId**. The authenticated
+	 * user must have role admin (non-network deployments) or network admin
+	 * (networks enabled). If networks are enabled, the deployment is only returned
+	 * if the deployment is in the given network.
 	 * </p>
 	 *
 	 *
-	 * @param deploymentId
-	 *            ("The unique id must be a String. It is returned as an **id**
-	 *            from the entity.",required=true)
-	 * @param properties
-	 *            ("A list of property names. You can use the properties
-	 *            parameter to restrict the number of returned properties.")
+	 * @param deploymentId ("The unique id must be a String. It is returned as an
+	 *                     **id** from the entity.",required=true)
+	 * @param properties   ("A list of property names. You can use the properties
+	 *                     parameter to restrict the number of returned
+	 *                     properties.")
 	 * @return value = { <br/>
 	 *         code = 200, message = "Successful response", response =
 	 *         DeploymentEntry.class),<br/>
@@ -82,7 +80,7 @@ public interface DeploymentsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/deployments/{deploymentId}", produces = "application/json",  method = RequestMethod.GET)
+	@RequestMapping(value = "/deployments/{deploymentId}", produces = "application/json", method = RequestMethod.GET)
 	ResponseEntity<DeploymentEntry> getDeployment(@PathVariable("deploymentId") String deploymentId,
 			@RequestParam(value = "properties", required = false) List<String> properties);
 
@@ -91,32 +89,29 @@ public interface DeploymentsApi {
 	 *
 	 * <p>
 	 * Gets a list of deployments. The authenticated user must have role admin
-	 * (non-network deployments) or network admin (networks enabled). If
-	 * networks are enabled, the network admin can only see the deployments in
-	 * the given network.
+	 * (non-network deployments) or network admin (networks enabled). If networks
+	 * are enabled, the network admin can only see the deployments in the given
+	 * network.
 	 * </p>
 	 *
 	 *
-	 * @param skipCount
-	 *            ("The number of entities that exist in the collection before
-	 *            those included in this list.")
-	 * @param maxItems
-	 *            ("The maximum number of items to return in the list.")
-	 * @param properties
-	 *            ("A list of property names. You can use the properties
-	 *            parameter to restrict the number of returned properties.")
+	 * @param skipCount  ("The number of entities that exist in the collection
+	 *                   before those included in this list.")
+	 * @param maxItems   ("The maximum number of items to return in the list.")
+	 * @param properties ("A list of property names. You can use the properties
+	 *                   parameter to restrict the number of returned properties.")
 	 * @return value = { <br/>
 	 *         code = 200, message = "Successful response", response =
 	 *         DeploymentPaging.class),<br/>
-	 *         code = 400, message = "Invalid parameter: value of **maxItems**
-	 *         or **skipCount** is invalid "),<br/>
+	 *         code = 400, message = "Invalid parameter: value of **maxItems** or
+	 *         **skipCount** is invalid "),<br/>
 	 *         code = 401, message = "Authentication failed"),<br/>
 	 *         code = 200, message = "Unexpected error", response =
 	 *         Error.class)<br/>
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/deployments", produces = "application/json",  method = RequestMethod.GET)
+	@RequestMapping(value = "/deployments", produces = "application/json", method = RequestMethod.GET)
 	ResponseEntity<DeploymentPaging> listDeployments(
 			@Min(0) @RequestParam(value = "skipCount", required = false) Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false) Integer maxItems,

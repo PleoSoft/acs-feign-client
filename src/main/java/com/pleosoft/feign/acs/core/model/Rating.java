@@ -110,8 +110,8 @@ public class Rating {
 	}
 
 	/**
-	 * The rating. The type is specific to the rating scheme, boolean for the
-	 * likes and an integer for the fiveStar.
+	 * The rating. The type is specific to the rating scheme, boolean for the likes
+	 * and an integer for the fiveStar.
 	 * 
 	 * @return myRating
 	 **/

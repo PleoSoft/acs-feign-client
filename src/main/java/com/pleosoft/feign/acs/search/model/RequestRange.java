@@ -141,8 +141,8 @@ public class RequestRange {
 	}
 
 	/**
-	 * If true means that the last bucket will end at “end” even if it is less
-	 * than “gap” wide.
+	 * If true means that the last bucket will end at “end” even if it is less than
+	 * “gap” wide.
 	 * 
 	 * @return hardend
 	 **/

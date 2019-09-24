@@ -62,8 +62,7 @@ public class ActionBodyExec {
 	}
 
 	/**
-	 * The entity upon which to execute the action, typically a node ID or
-	 * similar.
+	 * The entity upon which to execute the action, typically a node ID or similar.
 	 * 
 	 * @return targetId
 	 **/

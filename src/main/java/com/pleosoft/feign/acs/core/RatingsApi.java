@@ -41,23 +41,22 @@ public interface RatingsApi {
 	 * </p>
 	 *
 	 *
-	 * @param nodeId
-	 *            ("The identifier of a node.",required=true)
-	 * @param ratingBodyCreate
-	 *            (value = "For \"myRating\" the type is specific to the rating
-	 *            scheme, boolean for the likes and an integer for the fiveStar.
-	 *            For example, to \"like\" a file the following body would be
-	 *            used: ```JSON { \"id\": \"likes\", \"myRating\": true } ``` "
-	 *            ,required=true )
-	 * @param fields
-	 *            ("A list of field names. You can use this parameter to
-	 *            restrict the fields returned within a response if, for
-	 *            example, you want to save on overall bandwidth. The list
-	 *            applies to a returned individual entity or entries within a
-	 *            collection. If the API method also supports the **include**
-	 *            parameter, then the fields specified in the **include**
-	 *            parameter are returned in addition to those specified in the
-	 *            **fields** parameter. ")
+	 * @param nodeId           ("The identifier of a node.",required=true)
+	 * @param ratingBodyCreate (value = "For \"myRating\" the type is specific to
+	 *                         the rating scheme, boolean for the likes and an
+	 *                         integer for the fiveStar. For example, to \"like\" a
+	 *                         file the following body would be used: ```JSON {
+	 *                         \"id\": \"likes\", \"myRating\": true } ``` "
+	 *                         ,required=true )
+	 * @param fields           ("A list of field names. You can use this parameter
+	 *                         to restrict the fields returned within a response if,
+	 *                         for example, you want to save on overall bandwidth.
+	 *                         The list applies to a returned individual entity or
+	 *                         entries within a collection. If the API method also
+	 *                         supports the **include** parameter, then the fields
+	 *                         specified in the **include** parameter are returned
+	 *                         in addition to those specified in the **fields**
+	 *                         parameter. ")
 	 * @return value = { <br/>
 	 *         code = 201, message = "Successful response", response =
 	 *         RatingEntry.class),<br/>
@@ -84,10 +83,8 @@ public interface RatingsApi {
 	 * </p>
 	 *
 	 *
-	 * @param nodeId
-	 *            ("The identifier of a node.",required=true)
-	 * @param ratingId
-	 *            ("The identifier of a rating.",required=true)
+	 * @param nodeId   ("The identifier of a node.",required=true)
+	 * @param ratingId ("The identifier of a rating.",required=true)
 	 * @return value = { <br/>
 	 *         code = 204, message = "Successful response"),<br/>
 	 *         code = 400, message = "Invalid parameter: unknown rating scheme
@@ -99,7 +96,7 @@ public interface RatingsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/nodes/{nodeId}/ratings/{ratingId}", produces = "application/json",  method = RequestMethod.DELETE)
+	@RequestMapping(value = "/nodes/{nodeId}/ratings/{ratingId}", produces = "application/json", method = RequestMethod.DELETE)
 	ResponseEntity<Void> deleteRating(@PathVariable("nodeId") String nodeId, @PathVariable("ratingId") String ratingId);
 
 	/**
@@ -110,19 +107,16 @@ public interface RatingsApi {
 	 * </p>
 	 *
 	 *
-	 * @param nodeId
-	 *            ("The identifier of a node.",required=true)
-	 * @param ratingId
-	 *            ("The identifier of a rating.",required=true)
-	 * @param fields
-	 *            ("A list of field names. You can use this parameter to
-	 *            restrict the fields returned within a response if, for
-	 *            example, you want to save on overall bandwidth. The list
-	 *            applies to a returned individual entity or entries within a
-	 *            collection. If the API method also supports the **include**
-	 *            parameter, then the fields specified in the **include**
-	 *            parameter are returned in addition to those specified in the
-	 *            **fields** parameter. ")
+	 * @param nodeId   ("The identifier of a node.",required=true)
+	 * @param ratingId ("The identifier of a rating.",required=true)
+	 * @param fields   ("A list of field names. You can use this parameter to
+	 *                 restrict the fields returned within a response if, for
+	 *                 example, you want to save on overall bandwidth. The list
+	 *                 applies to a returned individual entity or entries within a
+	 *                 collection. If the API method also supports the **include**
+	 *                 parameter, then the fields specified in the **include**
+	 *                 parameter are returned in addition to those specified in the
+	 *                 **fields** parameter. ")
 	 * @return value = { <br/>
 	 *         code = 200, message = "Successful response", response =
 	 *         RatingEntry.class),<br/>
@@ -135,7 +129,7 @@ public interface RatingsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/nodes/{nodeId}/ratings/{ratingId}", produces = "application/json",  method = RequestMethod.GET)
+	@RequestMapping(value = "/nodes/{nodeId}/ratings/{ratingId}", produces = "application/json", method = RequestMethod.GET)
 	ResponseEntity<RatingEntry> getRating(@PathVariable("nodeId") String nodeId,
 			@PathVariable("ratingId") String ratingId,
 			@RequestParam(value = "fields", required = false) List<String> fields);
@@ -148,30 +142,26 @@ public interface RatingsApi {
 	 * </p>
 	 *
 	 *
-	 * @param nodeId
-	 *            ("The identifier of a node.",required=true)
-	 * @param skipCount
-	 *            ("The number of entities that exist in the collection before
-	 *            those included in this list. If not supplied then the default
-	 *            value is 0. ", defaultValue = "0")
-	 * @param maxItems
-	 *            ("The maximum number of items to return in the list. If not
-	 *            supplied then the default value is 100. ", defaultValue =
-	 *            "100")
-	 * @param fields
-	 *            ("A list of field names. You can use this parameter to
-	 *            restrict the fields returned within a response if, for
-	 *            example, you want to save on overall bandwidth. The list
-	 *            applies to a returned individual entity or entries within a
-	 *            collection. If the API method also supports the **include**
-	 *            parameter, then the fields specified in the **include**
-	 *            parameter are returned in addition to those specified in the
-	 *            **fields** parameter. ")
+	 * @param nodeId    ("The identifier of a node.",required=true)
+	 * @param skipCount ("The number of entities that exist in the collection before
+	 *                  those included in this list. If not supplied then the
+	 *                  default value is 0. ", defaultValue = "0")
+	 * @param maxItems  ("The maximum number of items to return in the list. If not
+	 *                  supplied then the default value is 100. ", defaultValue =
+	 *                  "100")
+	 * @param fields    ("A list of field names. You can use this parameter to
+	 *                  restrict the fields returned within a response if, for
+	 *                  example, you want to save on overall bandwidth. The list
+	 *                  applies to a returned individual entity or entries within a
+	 *                  collection. If the API method also supports the **include**
+	 *                  parameter, then the fields specified in the **include**
+	 *                  parameter are returned in addition to those specified in the
+	 *                  **fields** parameter. ")
 	 * @return value = { <br/>
 	 *         code = 200, message = "Successful response", response =
 	 *         RatingPaging.class),<br/>
-	 *         code = 400, message = "Invalid parameter: value of **maxItems**
-	 *         or **skipCount** is invalid "),<br/>
+	 *         code = 400, message = "Invalid parameter: value of **maxItems** or
+	 *         **skipCount** is invalid "),<br/>
 	 *         code = 401, message = "Authentication failed"),<br/>
 	 *         code = 404, message = "**nodeId** does not exist "),<br/>
 	 *         code = 200, message = "Unexpected error", response =
@@ -179,7 +169,7 @@ public interface RatingsApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/nodes/{nodeId}/ratings", produces = "application/json",  method = RequestMethod.GET)
+	@RequestMapping(value = "/nodes/{nodeId}/ratings", produces = "application/json", method = RequestMethod.GET)
 	ResponseEntity<RatingPaging> listRatings(@PathVariable("nodeId") String nodeId,
 			@Min(0) @RequestParam(value = "skipCount", required = false, defaultValue = "0") Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false, defaultValue = "100") Integer maxItems,

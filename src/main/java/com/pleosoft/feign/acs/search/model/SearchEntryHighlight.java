@@ -42,8 +42,7 @@ public class SearchEntryHighlight {
 	}
 
 	/**
-	 * The field where a match occured (one of the fields defined on the
-	 * request)
+	 * The field where a match occured (one of the fields defined on the request)
 	 * 
 	 * @return field
 	 **/
@@ -70,8 +69,7 @@ public class SearchEntryHighlight {
 	}
 
 	/**
-	 * Any number of snippets for the specified field highlighting the matching
-	 * text
+	 * Any number of snippets for the specified field highlighting the matching text
 	 * 
 	 * @return snippets
 	 **/

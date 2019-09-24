@@ -118,8 +118,8 @@ public class ActionDefinition {
 	}
 
 	/**
-	 * describes the action definition, e.g. \"This will move the matched item
-	 * to another space.\"
+	 * describes the action definition, e.g. \"This will move the matched item to
+	 * another space.\"
 	 * 
 	 * @return description
 	 **/

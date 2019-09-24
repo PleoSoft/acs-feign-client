@@ -42,8 +42,8 @@ public class RequestFilterQueriesInner {
 	}
 
 	/**
-	 * The filter query expression. For multi-select facets selected facets must
-	 * be order together
+	 * The filter query expression. For multi-select facets selected facets must be
+	 * order together
 	 * 
 	 * @return query
 	 **/
@@ -70,8 +70,8 @@ public class RequestFilterQueriesInner {
 	}
 
 	/**
-	 * Tags used exclude the filters from facet evaluation for multi-select
-	 * facet support
+	 * Tags used exclude the filters from facet evaluation for multi-select facet
+	 * support
 	 * 
 	 * @return tags
 	 **/

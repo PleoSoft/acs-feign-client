@@ -203,8 +203,8 @@ public class RequestHighlight {
 	}
 
 	/**
-	 * The fields to highlight and field specific configuration properties for
-	 * each field
+	 * The fields to highlight and field specific configuration properties for each
+	 * field
 	 * 
 	 * @return fields
 	 **/

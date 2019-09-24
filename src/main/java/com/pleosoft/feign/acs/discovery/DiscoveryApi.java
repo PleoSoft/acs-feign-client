@@ -37,8 +37,7 @@ public interface DiscoveryApi {
 	 * @return value = { <br/>
 	 *         code = 200, message = "Successful response", response =
 	 *         DiscoveryEntry.class),<br/>
-	 *         code = 501, message = "Discovery is disabled for the
-	 *         system"),<br/>
+	 *         code = 501, message = "Discovery is disabled for the system"),<br/>
 	 *         code = 200, message = "Unexpected error", response =
 	 *         Error.class)<br/>
 	 *         }

@@ -66,9 +66,9 @@ public class Pagination {
 
 	/**
 	 * A boolean value which is **true** if there are more entities in the
-	 * collection beyond those in this response. A true value means a request
-	 * with a larger value for the **skipCount** or the **maxItems** parameter
-	 * will return more entities.
+	 * collection beyond those in this response. A true value means a request with a
+	 * larger value for the **skipCount** or the **maxItems** parameter will return
+	 * more entities.
 	 * 
 	 * @return hasMoreItems
 	 **/
@@ -87,9 +87,9 @@ public class Pagination {
 	}
 
 	/**
-	 * An integer describing the total number of entities in the collection. The
-	 * API might not be able to determine this value, in which case this
-	 * property will not be present.
+	 * An integer describing the total number of entities in the collection. The API
+	 * might not be able to determine this value, in which case this property will
+	 * not be present.
 	 * 
 	 * @return totalItems
 	 **/
@@ -108,8 +108,8 @@ public class Pagination {
 	}
 
 	/**
-	 * An integer describing how many entities exist in the collection before
-	 * those included in this list.
+	 * An integer describing how many entities exist in the collection before those
+	 * included in this list.
 	 * 
 	 * @return skipCount
 	 **/

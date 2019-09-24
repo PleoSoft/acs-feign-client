@@ -171,8 +171,8 @@ public class RequestFacetField {
 	}
 
 	/**
-	 * Restricts the possible constraints to only indexed values with a
-	 * specified prefix.
+	 * Restricts the possible constraints to only indexed values with a specified
+	 * prefix.
 	 * 
 	 * @return prefix
 	 **/
@@ -229,8 +229,8 @@ public class RequestFacetField {
 	}
 
 	/**
-	 * When true, count results that match the query but which have no facet
-	 * value for the field (in addition to the Term-based constraints).
+	 * When true, count results that match the query but which have no facet value
+	 * for the field (in addition to the Term-based constraints).
 	 * 
 	 * @return missing
 	 **/
@@ -287,8 +287,7 @@ public class RequestFacetField {
 	}
 
 	/**
-	 * The minimum count required for a facet field to be included in the
-	 * response.
+	 * The minimum count required for a facet field to be included in the response.
 	 * 
 	 * @return mincount
 	 **/
@@ -334,8 +333,8 @@ public class RequestFacetField {
 	}
 
 	/**
-	 * Filter Queries with tags listed here will not be included in facet
-	 * counts. This is used for multi-select facetting.
+	 * Filter Queries with tags listed here will not be included in facet counts.
+	 * This is used for multi-select facetting.
 	 * 
 	 * @return excludeFilters
 	 **/

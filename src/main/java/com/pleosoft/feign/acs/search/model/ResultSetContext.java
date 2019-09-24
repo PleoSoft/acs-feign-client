@@ -194,11 +194,10 @@ public class ResultSetContext {
 	}
 
 	/**
-	 * Suggested corrections If zero results were found for the original query
-	 * then a single entry of type \"searchInsteadFor\" will be returned. If
-	 * alternatives were found that return more results than the original query
-	 * they are returned as \"didYouMean\" options. The highest quality
-	 * suggestion is first.
+	 * Suggested corrections If zero results were found for the original query then
+	 * a single entry of type \"searchInsteadFor\" will be returned. If alternatives
+	 * were found that return more results than the original query they are returned
+	 * as \"didYouMean\" options. The highest quality suggestion is first.
 	 * 
 	 * @return spellcheck
 	 **/

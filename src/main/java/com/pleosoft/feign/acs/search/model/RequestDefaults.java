@@ -71,8 +71,8 @@ public class RequestDefaults {
 	private DefaultFTSOperatorEnum defaultFTSOperator = DefaultFTSOperatorEnum.AND;
 
 	/**
-	 * The default way to combine query parts in field query groups when AND or
-	 * OR is not explicitly stated - includes ! - + FIELD:(one two three)
+	 * The default way to combine query parts in field query groups when AND or OR
+	 * is not explicitly stated - includes ! - + FIELD:(one two three)
 	 */
 	public enum DefaultFTSFieldOperatorEnum {
 		AND("AND"),
@@ -125,11 +125,10 @@ public class RequestDefaults {
 	}
 
 	/**
-	 * A list of query fields/properties used to expand TEXT: queries. The
-	 * default is cm:content. You could include all content properties using
-	 * d:content or list all individual content properties or types. As more
-	 * terms are included the query size, complexity, memory impact and query
-	 * time will increase.
+	 * A list of query fields/properties used to expand TEXT: queries. The default
+	 * is cm:content. You could include all content properties using d:content or
+	 * list all individual content properties or types. As more terms are included
+	 * the query size, complexity, memory impact and query time will increase.
 	 * 
 	 * @return textAttributes
 	 **/
@@ -168,8 +167,8 @@ public class RequestDefaults {
 	}
 
 	/**
-	 * The default way to combine query parts in field query groups when AND or
-	 * OR is not explicitly stated - includes ! - + FIELD:(one two three)
+	 * The default way to combine query parts in field query groups when AND or OR
+	 * is not explicitly stated - includes ! - + FIELD:(one two three)
 	 * 
 	 * @return defaultFTSFieldOperator
 	 **/

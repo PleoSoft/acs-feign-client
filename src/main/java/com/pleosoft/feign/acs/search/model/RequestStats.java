@@ -275,8 +275,8 @@ public class RequestStats {
 	}
 
 	/**
-	 * The set of all distinct values for the field (This can be very expensive
-	 * to calculate)
+	 * The set of all distinct values for the field (This can be very expensive to
+	 * calculate)
 	 * 
 	 * @return distinctValues
 	 **/
@@ -333,8 +333,8 @@ public class RequestStats {
 	}
 
 	/**
-	 * Number between 0.0 and 1.0 indicating how aggressively the algorithm
-	 * should try to be accurate. Used with boolean cardinality flag.
+	 * Number between 0.0 and 1.0 indicating how aggressively the algorithm should
+	 * try to be accurate. Used with boolean cardinality flag.
 	 * 
 	 * @return cardinalityAccuracy
 	 **/

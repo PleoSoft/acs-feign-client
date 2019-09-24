@@ -33,13 +33,12 @@ public interface ProbesApi {
 	 * Returns a status of 200 to indicate success and 503 for failure. The
 	 * readiness probe is normally only used to check repository startup. The
 	 * liveness probe should then be used to check the repository is still
-	 * responding to requests. **Note:** No authentication is required to call
-	 * this endpoint.
+	 * responding to requests. **Note:** No authentication is required to call this
+	 * endpoint.
 	 * </p>
 	 *
 	 *
-	 * @param probeId
-	 *            ("The name of the probe: * -ready- * -live- ",required=true)
+	 * @param probeId ("The name of the probe: * -ready- * -live- ",required=true)
 	 * @return value = { <br/>
 	 *         code = 200, message = "Successful response", response =
 	 *         ProbeEntry.class),<br/>
@@ -51,7 +50,7 @@ public interface ProbesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/probes/{probeId}", produces = "application/json",  method = RequestMethod.GET)
+	@RequestMapping(value = "/probes/{probeId}", produces = "application/json", method = RequestMethod.GET)
 	ResponseEntity<ProbeEntry> getProbe(@PathVariable("probeId") String probeId);
 
 }

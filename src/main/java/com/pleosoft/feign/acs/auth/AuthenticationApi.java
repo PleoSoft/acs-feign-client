@@ -31,19 +31,17 @@ public interface AuthenticationApi {
 	 * Create ticket (login)
 	 *
 	 * <p>
-	 * **Note:** this endpoint is available in Alfresco 5.2 and newer versions.
-	 * Logs in and returns the new authentication ticket. The userId and
-	 * password properties are mandatory in the request body. For example:
-	 * ```JSON { \"userId\": \"jbloggs\", \"password\": \"password\" } ``` To
-	 * use the ticket in future requests you should pass it in the request
-	 * header. For example using Javascript: ```Javascript
-	 * request.setRequestHeader (\"Authorization\", \"Basic \" + btoa(ticket));
-	 * ```
+	 * **Note:** this endpoint is available in Alfresco 5.2 and newer versions. Logs
+	 * in and returns the new authentication ticket. The userId and password
+	 * properties are mandatory in the request body. For example: ```JSON {
+	 * \"userId\": \"jbloggs\", \"password\": \"password\" } ``` To use the ticket
+	 * in future requests you should pass it in the request header. For example
+	 * using Javascript: ```Javascript request.setRequestHeader (\"Authorization\",
+	 * \"Basic \" + btoa(ticket)); ```
 	 * </p>
 	 *
 	 *
-	 * @param ticketBodyCreate
-	 *            (value = "The user credential." ,required=true )
+	 * @param ticketBodyCreate (value = "The user credential." ,required=true )
 	 * @return value = { <br/>
 	 *         code = 201, message = "Successful response", response =
 	 *         TicketEntry.class),<br/>
@@ -72,15 +70,15 @@ public interface AuthenticationApi {
 	 *         code = 204, message = "Successful response"),<br/>
 	 *         code = 400, message = "URL path does not include **-me-** or the
 	 *         ticket is not provided by the Authorization header"),<br/>
-	 *         code = 404, message = "Status of the user has changed (for
-	 *         example, the user is locked or the account is disabled) or the
-	 *         ticket has expired"),<br/>
+	 *         code = 404, message = "Status of the user has changed (for example,
+	 *         the user is locked or the account is disabled) or the ticket has
+	 *         expired"),<br/>
 	 *         code = 200, message = "Unexpected error", response =
 	 *         Error.class)<br/>
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/tickets/-me-", produces = "application/json",  method = RequestMethod.DELETE)
+	@RequestMapping(value = "/tickets/-me-", produces = "application/json", method = RequestMethod.DELETE)
 	ResponseEntity<Void> deleteTicket();
 
 	/**
@@ -88,10 +86,10 @@ public interface AuthenticationApi {
 	 *
 	 * <p>
 	 * **Note:** this endpoint is available in Alfresco 5.2 and newer versions.
-	 * Validates the specified ticket (derived from Authorization header) is
-	 * still valid. For example, you can pass the Authorization request header
-	 * using Javascript: ```Javascript request.setRequestHeader
-	 * (\"Authorization\", \"Basic \" + btoa(ticket)); ```
+	 * Validates the specified ticket (derived from Authorization header) is still
+	 * valid. For example, you can pass the Authorization request header using
+	 * Javascript: ```Javascript request.setRequestHeader (\"Authorization\",
+	 * \"Basic \" + btoa(ticket)); ```
 	 * </p>
 	 *
 	 *
@@ -101,16 +99,16 @@ public interface AuthenticationApi {
 	 *         code = 400, message = "URL path does not include **-me-** or the
 	 *         ticket is not provided by the Authorization header"),<br/>
 	 *         code = 401, message = "Authentication failed"),<br/>
-	 *         code = 404, message = "The request is authorized correctly but
-	 *         the status of the user (of the supplied ticket) has changed (for
-	 *         example, the user is locked or the account is disabled) or the
-	 *         ticket has expired"),<br/>
+	 *         code = 404, message = "The request is authorized correctly but the
+	 *         status of the user (of the supplied ticket) has changed (for example,
+	 *         the user is locked or the account is disabled) or the ticket has
+	 *         expired"),<br/>
 	 *         code = 200, message = "Unexpected error", response =
 	 *         Error.class)<br/>
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/tickets/-me-", produces = "application/json",  method = RequestMethod.GET)
+	@RequestMapping(value = "/tickets/-me-", produces = "application/json", method = RequestMethod.GET)
 	ResponseEntity<ValidTicketEntry> validateTicket();
 
 }

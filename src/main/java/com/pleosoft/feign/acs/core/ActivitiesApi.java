@@ -35,35 +35,29 @@ public interface ActivitiesApi {
 	 *
 	 * <p>
 	 * Gets a list of activities for person **personId**. You can use the `-me-`
-	 * string in place of `<personId>` to specify the currently authenticated
-	 * user.
+	 * string in place of `<personId>` to specify the currently authenticated user.
 	 * </p>
 	 *
 	 *
-	 * @param personId
-	 *            ("The identifier of a person.",required=true)
-	 * @param skipCount
-	 *            ("The number of entities that exist in the collection before
-	 *            those included in this list. If not supplied then the default
-	 *            value is 0. ", defaultValue = "0")
-	 * @param maxItems
-	 *            ("The maximum number of items to return in the list. If not
-	 *            supplied then the default value is 100. ", defaultValue =
-	 *            "100")
-	 * @param who
-	 *            ("A filter to include the user's activities only `me`, other
-	 *            user's activities only `others`' ")
-	 * @param siteId
-	 *            ("Include only activity feed entries relating to this site.")
-	 * @param fields
-	 *            ("A list of field names. You can use this parameter to
-	 *            restrict the fields returned within a response if, for
-	 *            example, you want to save on overall bandwidth. The list
-	 *            applies to a returned individual entity or entries within a
-	 *            collection. If the API method also supports the **include**
-	 *            parameter, then the fields specified in the **include**
-	 *            parameter are returned in addition to those specified in the
-	 *            **fields** parameter. ")
+	 * @param personId  ("The identifier of a person.",required=true)
+	 * @param skipCount ("The number of entities that exist in the collection before
+	 *                  those included in this list. If not supplied then the
+	 *                  default value is 0. ", defaultValue = "0")
+	 * @param maxItems  ("The maximum number of items to return in the list. If not
+	 *                  supplied then the default value is 100. ", defaultValue =
+	 *                  "100")
+	 * @param who       ("A filter to include the user's activities only `me`, other
+	 *                  user's activities only `others`' ")
+	 * @param siteId    ("Include only activity feed entries relating to this
+	 *                  site.")
+	 * @param fields    ("A list of field names. You can use this parameter to
+	 *                  restrict the fields returned within a response if, for
+	 *                  example, you want to save on overall bandwidth. The list
+	 *                  applies to a returned individual entity or entries within a
+	 *                  collection. If the API method also supports the **include**
+	 *                  parameter, then the fields specified in the **include**
+	 *                  parameter are returned in addition to those specified in the
+	 *                  **fields** parameter. ")
 	 * @return value = { <br/>
 	 *         code = 200, message = "Successful response", response =
 	 *         ActivityPaging.class),<br/>
@@ -79,7 +73,7 @@ public interface ActivitiesApi {
 	 *         }
 	 *
 	 */
-	@RequestMapping(value = "/people/{personId}/activities", produces = "application/json",  method = RequestMethod.GET)
+	@RequestMapping(value = "/people/{personId}/activities", produces = "application/json", method = RequestMethod.GET)
 	ResponseEntity<ActivityPaging> listActivitiesForPerson(@PathVariable("personId") String personId,
 			@Min(0) @RequestParam(value = "skipCount", required = false, defaultValue = "0") Integer skipCount,
 			@Min(1) @RequestParam(value = "maxItems", required = false, defaultValue = "100") Integer maxItems,

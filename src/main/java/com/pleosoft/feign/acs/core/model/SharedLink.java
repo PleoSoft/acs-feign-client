@@ -134,9 +134,8 @@ public class SharedLink {
 	}
 
 	/**
-	 * The name must not contain spaces or the following special characters: *
-	 * \" < > \\ / ? : and |. The character . must not be used at the end of the
-	 * name.
+	 * The name must not contain spaces or the following special characters: * \" <
+	 * > \\ / ? : and |. The character . must not be used at the end of the name.
 	 * 
 	 * @return name
 	 **/
@@ -287,8 +286,8 @@ public class SharedLink {
 
 	/**
 	 * The allowable operations for the Quickshare link itself. See
-	 * allowableOperationsOnTarget for the allowable operations pertaining to
-	 * the linked content node.
+	 * allowableOperationsOnTarget for the allowable operations pertaining to the
+	 * linked content node.
 	 * 
 	 * @return allowableOperations
 	 **/
