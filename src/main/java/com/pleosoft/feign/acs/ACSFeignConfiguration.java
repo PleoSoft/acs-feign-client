@@ -84,13 +84,12 @@ public class ACSFeignConfiguration {
 	public HttpMessageConverters httpMessageConverters() {
 		final HttpMessageConverter<?> jacksonConverter = new MappingJackson2HttpMessageConverter(objectMapper());
 		SpringManyMultipartFilesReader springManyMultipartFilesReader = new SpringManyMultipartFilesReader(4096);
-		
+
 		ArrayList<MediaType> arrayList2 = new ArrayList<>();
 		arrayList2.add(MediaType.MULTIPART_FORM_DATA);
-		
-		arrayList2.add(new MediaType("application", "dita+xml", Collections.singletonMap("charset","UTF-8")));
-		springManyMultipartFilesReader.setSupportedMediaTypes(arrayList2);
 
+		arrayList2.add(new MediaType("application", "dita+xml", Collections.singletonMap("charset", "UTF-8")));
+		springManyMultipartFilesReader.setSupportedMediaTypes(arrayList2);
 
 		ArrayList<HttpMessageConverter<?>> arrayList = new ArrayList<>();
 		arrayList.add(jacksonConverter);

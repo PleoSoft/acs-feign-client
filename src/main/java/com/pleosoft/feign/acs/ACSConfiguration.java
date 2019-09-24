@@ -16,13 +16,19 @@
 
 package com.pleosoft.feign.acs;
 
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @EnableConfigurationProperties({ ACSConfigurationProperties.class })
-@EnableFeignClients(basePackages = { "com.pleosoft.feign.acs" })
 public class ACSConfiguration {
 
+	@Configuration
+	@ConditionalOnProperty(name = "acs.feign.use-defaults", havingValue = "true")
+	@EnableFeignClients(basePackages = { "com.pleosoft.feign.acs" })
+	public static class DefaultFeignConfiguration {
+
+	}
 }
