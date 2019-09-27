@@ -17,7 +17,7 @@
 package com.pleosoft.feign.acs;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.List;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.ObjectFactory;
@@ -27,7 +27,6 @@ import org.springframework.cloud.openfeign.support.ResponseEntityDecoder;
 import org.springframework.cloud.openfeign.support.SpringDecoder;
 import org.springframework.cloud.openfeign.support.SpringEncoder;
 import org.springframework.context.annotation.Bean;
-import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 
@@ -41,7 +40,6 @@ import feign.Retryer;
 import feign.codec.Decoder;
 import feign.codec.Encoder;
 import feign.codec.ErrorDecoder;
-import feign.form.spring.converter.SpringManyMultipartFilesReader;
 
 public class ACSFeignConfiguration {
 
@@ -59,23 +57,23 @@ public class ACSFeignConfiguration {
 	}
 
 	@Bean
-	public Decoder feignDecoder() {
+	public Decoder feignDecoder(HttpMessageConverters httpMessageConverters) {
 		return new ResponseEntityDecoder(new SpringDecoder(new ObjectFactory<HttpMessageConverters>() {
 
 			@Override
 			public HttpMessageConverters getObject() throws BeansException {
-				return httpMessageConverters();
+				return httpMessageConverters;
 			}
 		}));
 	}
 
 	@Bean
-	public Encoder feignEncoder() {
+	public Encoder feignEncoder(HttpMessageConverters httpMessageConverters) {
 		return new SpringEncoder(new ObjectFactory<HttpMessageConverters>() {
 
 			@Override
 			public HttpMessageConverters getObject() throws BeansException {
-				return httpMessageConverters();
+				return httpMessageConverters;
 			}
 		});
 	}
@@ -83,18 +81,14 @@ public class ACSFeignConfiguration {
 	@Bean
 	public HttpMessageConverters httpMessageConverters() {
 		final HttpMessageConverter<?> jacksonConverter = new MappingJackson2HttpMessageConverter(objectMapper());
-		SpringManyMultipartFilesReader springManyMultipartFilesReader = new SpringManyMultipartFilesReader(4096);
 
-		ArrayList<MediaType> arrayList2 = new ArrayList<>();
-		arrayList2.add(MediaType.MULTIPART_FORM_DATA);
+		ArrayList<HttpMessageConverter<?>> defaultConverters = new ArrayList<>();
+		defaultConverters.add(jacksonConverter);
+		return new HttpMessageConverters(configureMessageConverters(defaultConverters));
+	}
 
-		arrayList2.add(new MediaType("application", "dita+xml", Collections.singletonMap("charset", "UTF-8")));
-		springManyMultipartFilesReader.setSupportedMediaTypes(arrayList2);
-
-		ArrayList<HttpMessageConverter<?>> arrayList = new ArrayList<>();
-		arrayList.add(jacksonConverter);
-		arrayList.add(springManyMultipartFilesReader);
-		return new HttpMessageConverters(arrayList);
+	protected List<HttpMessageConverter<?>> configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+		return converters;
 	}
 
 	@Bean
@@ -104,7 +98,12 @@ public class ACSFeignConfiguration {
 		objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 		final SimpleModule module = new SimpleModule();
 		objectMapper.registerModule(module);
+
+		configureObjectMapper(objectMapper);
 		return objectMapper;
+	}
+
+	protected void configureObjectMapper(ObjectMapper objectMapper) {
 	}
 
 	@Bean
