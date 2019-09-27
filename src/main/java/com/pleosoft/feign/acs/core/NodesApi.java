@@ -22,13 +22,18 @@ import java.util.List;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Pattern;
 
+import org.springframework.core.io.Resource;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.pleosoft.feign.acs.core.model.AssociationBody;
 import com.pleosoft.feign.acs.core.model.AssociationEntry;
@@ -284,6 +289,13 @@ public interface NodesApi {
 	@RequestMapping(value = "/nodes/{nodeId}/children", produces = "application/json", consumes = "application/json", method = RequestMethod.POST)
 	ResponseEntity<NodeEntry> createNode(@PathVariable("nodeId") String nodeId,
 			@RequestBody NodeBodyCreate nodeBodyCreate,
+			@RequestParam(value = "autoRename", required = false) Boolean autoRename,
+			@RequestParam(value = "include", required = false) List<String> include,
+			@RequestParam(value = "fields", required = false) List<String> fields);
+	
+	@RequestMapping(value = "/nodes/{nodeId}/children", produces = "application/json", consumes = "multipart/form-data", method = RequestMethod.POST)
+	ResponseEntity<NodeEntry> createNode(@PathVariable("nodeId") String nodeId,
+			@RequestBody LinkedMultiValueMap<String, ?> nodeBodyCreate, 
 			@RequestParam(value = "autoRename", required = false) Boolean autoRename,
 			@RequestParam(value = "include", required = false) List<String> include,
 			@RequestParam(value = "fields", required = false) List<String> fields);
