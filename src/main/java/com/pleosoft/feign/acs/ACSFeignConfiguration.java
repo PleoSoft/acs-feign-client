@@ -57,7 +57,7 @@ public class ACSFeignConfiguration {
 	}
 
 	@Bean
-	public Decoder feignDecoder(HttpMessageConverters httpMessageConverters) {
+	public Decoder feignDecoder(final HttpMessageConverters httpMessageConverters) {
 		return new ResponseEntityDecoder(new SpringDecoder(new ObjectFactory<HttpMessageConverters>() {
 
 			@Override
@@ -68,7 +68,7 @@ public class ACSFeignConfiguration {
 	}
 
 	@Bean
-	public Encoder feignEncoder(HttpMessageConverters httpMessageConverters) {
+	public Encoder feignEncoder(final HttpMessageConverters httpMessageConverters) {
 		return new SpringEncoder(new ObjectFactory<HttpMessageConverters>() {
 
 			@Override
