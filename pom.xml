@@ -6,7 +6,7 @@
 
 	<groupId>com.pleosoft</groupId>
 	<artifactId>acs-feign-client</artifactId>
-	<version>1.0.2-SNAPSHOT</version>
+	<version>1.0.2-RELEASE</version>
 	<packaging>jar</packaging>
 
 	<name>acs-feign-client</name>
