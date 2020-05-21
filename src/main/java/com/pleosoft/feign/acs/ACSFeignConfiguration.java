@@ -16,95 +16,15 @@
 
 package com.pleosoft.feign.acs;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
-import org.springframework.cloud.openfeign.support.ResponseEntityDecoder;
-import org.springframework.cloud.openfeign.support.SpringDecoder;
-import org.springframework.cloud.openfeign.support.SpringEncoder;
 import org.springframework.context.annotation.Bean;
-import org.springframework.http.converter.HttpMessageConverter;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
-
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.module.SimpleModule;
 
 import feign.RequestInterceptor;
-import feign.Retryer;
-import feign.codec.Decoder;
-import feign.codec.Encoder;
-import feign.codec.ErrorDecoder;
 
-public class ACSFeignConfiguration {
+public class ACSFeignConfiguration extends ACSFeignNoAuthConfiguration {
 
 	@Autowired
 	private ACSConfigurationProperties properties;
-
-	@Bean
-	public Retryer retryer() {
-		return new Retryer.Default();
-	}
-
-	@Bean
-	public ErrorDecoder errorDecoder() {
-		return new ErrorDecoder.Default();
-	}
-
-	@Bean
-	public Decoder feignDecoder(final HttpMessageConverters httpMessageConverters) {
-		return new ResponseEntityDecoder(new SpringDecoder(new ObjectFactory<HttpMessageConverters>() {
-
-			@Override
-			public HttpMessageConverters getObject() throws BeansException {
-				return httpMessageConverters;
-			}
-		}));
-	}
-
-	@Bean
-	public Encoder feignEncoder(final HttpMessageConverters httpMessageConverters) {
-		return new SpringEncoder(new ObjectFactory<HttpMessageConverters>() {
-
-			@Override
-			public HttpMessageConverters getObject() throws BeansException {
-				return httpMessageConverters;
-			}
-		});
-	}
-
-	@Bean
-	public HttpMessageConverters httpMessageConverters() {
-		final HttpMessageConverter<?> jacksonConverter = new MappingJackson2HttpMessageConverter(objectMapper());
-
-		ArrayList<HttpMessageConverter<?>> defaultConverters = new ArrayList<>();
-		defaultConverters.add(jacksonConverter);
-		return new HttpMessageConverters(configureMessageConverters(defaultConverters));
-	}
-
-	protected List<HttpMessageConverter<?>> configureMessageConverters(List<HttpMessageConverter<?>> converters) {
-		return converters;
-	}
-
-	@Bean
-	public ObjectMapper objectMapper() {
-		final ObjectMapper objectMapper = new ObjectMapper();
-		objectMapper.setSerializationInclusion(Include.NON_NULL);
-		objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-		final SimpleModule module = new SimpleModule();
-		objectMapper.registerModule(module);
-
-		configureObjectMapper(objectMapper);
-		return objectMapper;
-	}
-
-	protected void configureObjectMapper(ObjectMapper objectMapper) {
-	}
 
 	@Bean
 	public RequestInterceptor headerAuthRequestInterceptor() {

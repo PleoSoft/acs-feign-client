@@ -18,8 +18,8 @@ package com.pleosoft.feign.acs.auth;
 
 import org.springframework.cloud.openfeign.FeignClient;
 
-import com.pleosoft.feign.acs.ACSFeignConfiguration;;
+import com.pleosoft.feign.acs.ACSFeignNoAuthConfiguration;;
 
-@FeignClient(name = "AuthenticationApiClient", url = "${acs.feign.url}", path = "api/-default-/public/alfresco/versions/1", configuration = ACSFeignConfiguration.class)
+@FeignClient(name = "AuthenticationApiClient", url = "${acs.feign.url}", path = "api/-default-/public/authentication/versions/1", configuration = ACSFeignNoAuthConfiguration.class)
 public interface AuthenticationApiClient extends AuthenticationApi {
 }
