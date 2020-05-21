@@ -34,7 +34,7 @@ public class ContentInfo {
 	private String mimeTypeName = null;
 
 	@JsonProperty("sizeInBytes")
-	private Integer sizeInBytes = null;
+	private Long sizeInBytes = null;
 
 	@JsonProperty("encoding")
 	private String encoding = null;
@@ -79,7 +79,7 @@ public class ContentInfo {
 		this.mimeTypeName = mimeTypeName;
 	}
 
-	public ContentInfo sizeInBytes(Integer sizeInBytes) {
+	public ContentInfo sizeInBytes(Long sizeInBytes) {
 		this.sizeInBytes = sizeInBytes;
 		return this;
 	}
@@ -91,11 +91,11 @@ public class ContentInfo {
 	 **/
 	@NotNull
 
-	public Integer getSizeInBytes() {
+	public Long getSizeInBytes() {
 		return sizeInBytes;
 	}
 
-	public void setSizeInBytes(Integer sizeInBytes) {
+	public void setSizeInBytes(Long sizeInBytes) {
 		this.sizeInBytes = sizeInBytes;
 	}
 
